@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = "Ashwin"
   spec.email         = "s.ashwinkumar2490@gmail.com"
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
+  # if spec.respond_to?(:metadata)
+  #   spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
+  # end
 
   spec.summary       = "Map my india API ruby client"
   spec.description   = "This is a ruby  gem/client for the mapmyindia REST APIs. This will be edited later to show usage "
