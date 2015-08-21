@@ -6,16 +6,15 @@ require 'mapmyindia_ruby/version'
 Gem::Specification.new do |spec|
   spec.name          = "mapmyindia_ruby"
   spec.version       = MapmyindiaRuby::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = "Ashwin"
+  spec.email         = "s.ashwinkumar2490@gmail.com"
 
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Map my india API ruby client"
+  spec.description   = "This is a ruby  gem/client for the mapmyindia REST APIs. This will be edited later to show usage "
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
