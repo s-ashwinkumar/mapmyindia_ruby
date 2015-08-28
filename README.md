@@ -1,8 +1,10 @@
 # MapmyindiaRuby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mapmyindia_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a ruby client/gem for the MapmyIndia APIs - http://www.mapmyindia.com/api/
 
-TODO: Delete this and the text above, and describe your gem
+MapymyIndia adds location intelligence to your applications and they are India's best maps and LBS service providers.
+
+They have Javascript and REST APIs. This gem is a client for their REST APIs. You will need to sign up to their APIs and get an access key to the APIs.
 
 ## Installation
 
@@ -22,7 +24,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Using the API is pretty simple. Just create a MapmyindiaRuby::Base object and pass the license key while creating the client object. You can use the API methods using the client object as shown below.
+
+
+
+```ruby
+client = MapmyindiaRuby::Base.new(<LICENSE KEY>)
+
+resp = client.geocoding("mapmyindia, delhi") #the query string as parameter
+
+resp = client.reverse_geocoding(28.66289505,77.22479939) #the lattitude and longitude as parameters
+
+```
+
+Both the APIs above return an array of GeoAddr objects. The properties of this type can be found here : http://www.mapmyindia.com/api/v3/docs/geocoding-api
+
+```ruby
+resp = client.distance([PARAMETERS]) #parameters as mention in http://www.mapmyindia.com/api/v3/docs/distance-api
+```
+
+The response for this api contains a status, duration and length. For more info refer : http://www.mapmyindia.com/api/v3/docs/distance-api
+
+```ruby
+resp = client.map_tile_image([PARAMETERS],[LOCATION]) 
+#parameters as mention in http://www.mapmyindia.com/api/v3/docs/map-tile-image-api
+#Location is the paramater the specifies where to store the PNG image. It needs to have write access.
+
+```
+The response for this API is a PNG image and the image is stored in the path provided as the second parameter.
 
 ## Development
 
@@ -37,3 +66,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## TO-DOs
+
+1. The route API is yet to implemented. The response object contains multiple objects and has to be converted into a ruby friendly format.
+
+2. Tests have not been written yet.
